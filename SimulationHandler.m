@@ -99,7 +99,7 @@ classdef SimulationHandler < handle             % handle class = func of methods
         end
     end
     
-    methods(Static)                                             % may be called on the class itself, not on instances of the class
+    methods(Static)                                         % may be called on the class itself, not on instances of the class
         function array = convert_csv_to_array(sheet_name)   % first column: time; sec -> day
             a = readmatrix("flows.xlsx", Sheet=sheet_name);
             a(:,1) = a(:,1)*(24*3600);  % windows time format -> seconds
